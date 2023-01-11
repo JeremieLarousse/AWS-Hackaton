@@ -22,19 +22,16 @@ const SelectDestination = () => {
             <div className='destinationSelection'>
                 {destination.map((info) => (
                     <div>
-                        <>
+                        <button className='buttonDestination'>
 
                             <div>{info.nom_destination}</div>
-                            <div>{info.distance}</div>
-                        </>
-
+                            <div>{info.distance} km</div>
+                        </button>
                     </div>
                 ))}
             </div>
 
-            <button className="buttonValidation" type="submit">
-                Valider
-            </button>
+
         </div>
     );
 };
