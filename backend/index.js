@@ -4,8 +4,13 @@ const cors = require("cors");
 const app = express();
 const port = process.env.APP_PORT ?? 5000;
 
+const missionRouter = require("./routers/mission.router");
+
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/mission", missionRouter);
+
 
 app.listen(port, (err) => {
     if (err) {
@@ -14,3 +19,5 @@ app.listen(port, (err) => {
         console.warn(`server is listening on ${port}`);
     }
 });
+
+
