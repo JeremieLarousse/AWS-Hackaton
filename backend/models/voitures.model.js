@@ -5,8 +5,6 @@ const getModelVoitures = async () => {
     return result;
 };
 
-
-
 module.exports = {
     getModelVoitures,
 
