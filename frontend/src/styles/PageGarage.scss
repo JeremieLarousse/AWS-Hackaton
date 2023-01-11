@@ -1,0 +1,62 @@
+.container {
+    position: relative;
+    .background{
+        opacity:0.2;
+    }
+
+    .page {
+        position: absolute;
+        top: 0;
+
+        .return {
+            margin-bottom: -30px;
+
+            .button_return {
+                color: blue;
+                height: 22px;
+                border-radius: 11px;
+                border: 1px solid blue;
+                margin: 20px auto auto 20px;
+                scale: 3;
+            }
+        }
+
+        .title {
+            // background-color: green;
+            text-align: center;
+            margin: 0px auto 20px auto;
+        }
+
+        .options {
+            // background-color: red;
+            width: 30%;
+            margin: 20px auto 20px auto;
+            text-align: center;
+        }
+
+        .pool {
+            background-color: white;
+            height: 300px;
+            width: 95%;
+            margin: 0px auto 20px auto;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            overflow: scroll;
+        }
+
+        .save {
+            // background-color: blue;
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            margin: auto;
+
+            .button {
+                width: 150px;
+            }
+        }
+    }
+}
