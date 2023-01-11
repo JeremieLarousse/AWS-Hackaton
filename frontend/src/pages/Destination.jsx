@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import SelectDestination from '@components/SelectDestination';
+import "../styles/destination.scss"
 
 const Destination = () => {
     return (
