@@ -1,0 +1,39 @@
+.container {
+    background-color: yellow;
+
+    .retour {
+        margin: 0;
+
+    }
+
+    .title {
+        background-color: green;
+        text-align: center;
+        margin: 0px auto 20px auto;
+    }
+
+    .options {
+        background-color: red;
+        width: 80%;
+        margin: 20px auto 20px auto;
+    }
+
+    .pool {
+        background-color: white;
+        height: 300px;
+        width: 80%;
+        margin: 0px auto 20px auto;
+    }
+
+    .save {
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        margin: auto;
+
+        .button {
+            width: 150px;
+        }
+    }
+}
