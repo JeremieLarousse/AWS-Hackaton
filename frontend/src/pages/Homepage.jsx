@@ -1,11 +1,19 @@
 import React from 'react';
-import Home from '@components/Home';
+import { NavLink } from "react-router-dom";
 import '../styles/Homepage.scss';
 
 const Homepage = () => {
     return (
         <div className='Homepage'>
-            <Home />
+            <NavLink to='mission'>
+                <button type='submit'>Mission</button>
+            </NavLink>
+            <NavLink to='destination'>
+                <button type='submit'>Destination</button>
+            </NavLink>
+            <NavLink to='garage'>
+                <button type='submit'>Garage</button>
+            </NavLink>
         </div>
     );
 };
