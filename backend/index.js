@@ -3,9 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = process.env.APP_PORT ?? 5000;
+const voitureRouter = require('./routers/voitures.router');
 
 app.use(cors());
 app.use(express.json());
+app.use("/parc", voitureRouter);
 
 app.listen(port, (err) => {
     if (err) {

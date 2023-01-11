@@ -1,38 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
 import CardVehicule from './CardVehicule';
 import '../styles/PageGarage.scss';
 import TiArrowBack from '@meronex/icons/ti/TiArrowBack';
 
-const array = [
-    {
-        marque: 'opel',
-        modèle: 'corsa'
-    },
-    {
-        marque: 'bmw',
-        modèle: 's3'
-    },
-    {
-        marque: 'bmw',
-        modèle: 's3'
-    },
-    {
-        marque: 'bmw',
-        modèle: 's3'
-    },
-    {
-        marque: 'bmw',
-        modèle: 's3'
-    },
-];
-
-
+// const array = [
+//     {
+//         marque: 'opel',
+//         modèle: 'corsa'
+//     },
+//     {
+//         marque: 'bmw',
+//         modèle: 's3'
+//     },
+//     {
+//         marque: 'bmw',
+//         modèle: 's3'
+//     },
+//     {
+//         marque: 'bmw',
+//         modèle: 's3'
+//     },
+//     {
+//         marque: 'bmw',
+//         modèle: 's3'
+//     },
+// ];
 
 const PageGarage = () => {
+    const [marque, setMarque] = useState('Marque inconnue');
+    const [modele, setModele] = useState('Modèle inconnu');
+    const [immatriculation, setImmatriculation] = useState('Immatriculation inconnue');
+    const [type, setType] = useState('Type inconnu');
+    const [date, setDate] = useState('Date inconnue');
+    const [disponible, setDisponible] = useState('Disponibilité inconnue');
+    const [autonomie, setAutonomie] = useState('Autonomie inconnue');
+    const [data, setData] = useState([]);
+
+    const displayVoiture = () => {
+        axios
+            .get(`${import.meta.env.VITE_BACKEND_URL}/parc`)
+            .then((res) => {
+                setData(res.data);
+                console.log(res.data);
+            })
+    }
 
     useEffect(() => {
-        console.log('test');
+        displayVoiture();
     }, [])
 
     return (
@@ -52,10 +68,17 @@ const PageGarage = () => {
                     <p>Destination : /destination (/100km)</p>
                 </div>
                 <div className='pool'>
-                    {array.map((element) => {
+                    {data.map((element) => {
                         return (
                             <div>
-                                <CardVehicule marque={element.marque} modèle={element.modèle} />
+                                <CardVehicule
+                                    marque={element.marque}
+                                    modele={element.modele}
+                                    immatriculation={element.immatriculation}
+                                    type={element.type}
+                                    date={element.date}
+                                    disponible={element.disponible}
+                                    autonomie={element.autonomie} />
                             </div>
                         )
                     })}

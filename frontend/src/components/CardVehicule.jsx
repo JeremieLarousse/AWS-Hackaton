@@ -1,20 +1,20 @@
 import React from 'react';
 import '../styles/CardVehicule.scss';
 
-const CardVehicule = () => {
+const CardVehicule = ({ marque, modele, immatriculation, type, date, disponible, autonomie }) => {
     return (
         <div className='card'>
             <div className='image'>
                 <img src='https://im.qccdn.fr/node/actualite-renault-clio-e-tech-hybrid-2020-premieres-impressions-80915/original-60267.jpg' alt='Clio' className='img'></img>
             </div>
             <div className='info'>
-                <p><span className='categorie'>Marque :</span> /marque</p>
-                <p><span className='categorie'>Modèle :</span> /modèle</p>
-                <p><span className='categorie'>Immatriculation :</span> /immatriculation</p>
-                <p><span className='categorie'>Type :</span> /type</p>
-                <p><span className='categorie'>Date de mise en circulation :</span> //////</p>
-                <p><span className='categorie'>Disponible :</span> oui</p>
-                <p><span className='categorie'>Autonomie :</span> /autonomie</p>
+                <p><span className='categorie'>Marque :</span> {marque}</p>
+                <p><span className='categorie'>Modèle :</span> {modele}</p>
+                <p><span className='categorie'>Immatriculation :</span> {immatriculation}</p>
+                <p><span className='categorie'>Type :</span> {type}</p>
+                <p><span className='categorie'>Date de mise en circulation :</span> {date}</p>
+                <p><span className='categorie'>Disponible :</span> {disponible}</p>
+                <p><span className='categorie'>Autonomie :</span> {autonomie}</p>
             </div>
         </div>
     );
