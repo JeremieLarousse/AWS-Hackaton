@@ -3,9 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = process.env.APP_PORT ?? 5000;
+const destinationRoutes = require("./routers/destination.route");
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/destination", destinationRoutes);
 
 app.listen(port, (err) => {
     if (err) {
