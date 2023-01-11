@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import SelectDestination from '@components/SelectDestination';
 
 const Destination = () => {
     return (
@@ -8,6 +9,7 @@ const Destination = () => {
                 <button type='submit'>Retour</button>
             </NavLink>
             <h1>Destination</h1>
+            <SelectDestination />
         </div>
     );
 };
