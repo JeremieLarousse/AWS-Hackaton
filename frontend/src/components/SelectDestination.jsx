@@ -16,7 +16,11 @@ const SelectDestination = () => {
             })
     }, [])
 
+
+
     return (
+
+
         <div>
 
             <div className='destinationSelection'>
@@ -24,7 +28,7 @@ const SelectDestination = () => {
                     <div>
                         <button className='buttonDestination'>
 
-                            <div>{info.nom_destination}</div>
+                            <div className='nomDestination'>{info.nom_destination}</div>
                             <div>{info.distance} km</div>
                         </button>
                     </div>
