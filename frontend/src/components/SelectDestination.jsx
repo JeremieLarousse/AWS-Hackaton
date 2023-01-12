@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const SelectDestination = ({ searchValue }) => {
+const SelectDestination = ({ searchValue, setSelectedDestination }) => {
 
 
     const [destination, setDestination] = useState([]);
+
+    const handleDestination = () => {
+        setSelectedDestination([info.nom_destination, info.distance]);
+        console.log([info.nom_destination, info.distance]);
+    }
 
     useEffect(() => {
         axios.get("http://localhost:5000/destination")
@@ -25,7 +30,7 @@ const SelectDestination = ({ searchValue }) => {
                     return el.nom_destination.toLowerCase().includes(searchValue.toLowerCase())
                 }).map((info) => (
                     <div>
-                        <button className='buttonDestination'>
+                        <button className='buttonDestination' onClick={handleDestination}>
 
                             <div className='nomDestination'>{info.nom_destination}</div>
                             <div>{info.distance} km</div>

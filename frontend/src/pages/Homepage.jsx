@@ -6,7 +6,7 @@ import Mission from "./Mission";
 import Garage from "./Garage";
 
 function Homepage() {
-  const [selectedMission, setSelectedMission] = useState();
+  const [selectedMission, setSelectedMission] = useState(['', '']);
   const [modal, setModal] = useState();
 
   return (
@@ -23,7 +23,11 @@ function Homepage() {
       {modal == "destination" && <Destination
         setModal={setModal} />}
       <button onClick={() => setModal("garage")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Garage</button>
-      {modal == "garage" && <Garage setSelectedMission={setSelectedMission} setModal={setModal} />}
+      {modal == "garage" && <Garage
+        selectedMission={selectedMission}
+        setSelectedMission={setSelectedMission}
+        setModal={setModal}
+      />}
       <div className="selectedMission">
         {selectedMission && (
           <p>

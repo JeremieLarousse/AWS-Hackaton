@@ -6,7 +6,7 @@ import TiArrowBack from '@meronex/icons/ti/TiArrowBack';
 import GiSave from '@meronex/icons/gi/GiSave';
 import '../styles/PageGarage.scss';
 
-const Garage = ({ setModal }) => {
+const Garage = ({ setModal, selectedMission, setSelectedMission }) => {
     // Voitures :
     const [marque, setMarque] = useState('Marque inconnue');
     const [modele, setModele] = useState('Modèle inconnu');
@@ -37,7 +37,7 @@ const Garage = ({ setModal }) => {
     };
     useEffect(() => {
         displayVoiture();
-        console.log(disponible);
+        console.log(selectedMission);
     }, []);
 
     return (
@@ -53,7 +53,7 @@ const Garage = ({ setModal }) => {
                     </div>
                     <div className='options'>
                         <div className='texte'>
-                            <p>Mission : {mission}</p>
+                            <p>Mission : {selectedMission[0]}</p>
                             <p>Destination : {destination} ({distance}km)</p>
                         </div>
                         <div className='label'>
