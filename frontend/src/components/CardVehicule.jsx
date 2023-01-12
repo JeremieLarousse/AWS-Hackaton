@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/CardVehicule.scss';
 
-const CardVehicule = ({ marque, modele, immatriculation, type, date, disponible, autonomie }) => {
+const CardVehicule = ({ image, marque, modele, immatriculation, type, date, disponible, autonomie }) => {
     return (
         <div className='card'>
             <div className='image'>
-                <img src='https://im.qccdn.fr/node/actualite-renault-clio-e-tech-hybrid-2020-premieres-impressions-80915/original-60267.jpg' alt='Clio' className='img'></img>
+                <img src={image} className='img'></img>
             </div>
             <div className='info'>
                 <p><span className='categorie'>Marque :</span> {marque}</p>
