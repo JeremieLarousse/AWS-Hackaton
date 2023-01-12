@@ -1,13 +1,16 @@
-import React from 'react';
-import PageGarage from '../components/PageGarage';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import PageGarage from "../components/PageGarage";
 
+function Garage() {
+  return (
+    <div>
+      <NavLink to="/">
+        <PageGarage />
+      </NavLink>
+    </div>
+  );
+}
 
-const Garage = () => {
-    return (
-        <div>
-            <PageGarage />
-        </div>
-    );
-};
 
 export default Garage;
