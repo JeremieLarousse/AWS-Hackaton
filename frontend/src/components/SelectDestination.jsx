@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const SelectDestination = ({ searchValue, setSelectedDestination }) => {
 
-
     const [destination, setDestination] = useState([]);
 
     const handleDestination = () => {

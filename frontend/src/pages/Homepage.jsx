@@ -10,7 +10,6 @@ function Homepage() {
     const [selectedDestination, setSelectedDestination] = useState(['', 0]);
     const [modal, setModal] = useState();
 
-
     return (
         <div className="Homepage">
 
