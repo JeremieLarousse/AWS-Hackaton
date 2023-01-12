@@ -72,6 +72,7 @@ const PageGarage = () => {
                             return (
                                 <div>
                                     <CardVehicule
+                                        image={element.image_voiture}
                                         marque={element.marque}
                                         modele={element.modele}
                                         immatriculation={element.immatriculation}
