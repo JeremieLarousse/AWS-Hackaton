@@ -11,7 +11,7 @@ function Homepage() {
 
   return (
     <div className="Homepage">
-      <button onClick={() => setModal("mission")}>Mission</button>
+      <button onClick={() => setModal("mission")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Mission</button>
       {modal == "mission" && (
         <Mission
           selectedMission={selectedMission}
@@ -19,10 +19,11 @@ function Homepage() {
           setModal={setModal}
         />
       )}
-      <button onClick={() => setModal("destination")}>Destination</button>
-      {modal == "destination" && <Destination />}
-      <button onClick={() => setModal("garage")}>Garage</button>
-      {modal == "garage" && <Garage setSelectedMission={setSelectedMission} />}
+      <button onClick={() => setModal("destination")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Destination</button>
+      {modal == "destination" && <Destination
+        setModal={setModal} />}
+      <button onClick={() => setModal("garage")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Garage</button>
+      {modal == "garage" && <Garage setSelectedMission={setSelectedMission} setModal={setModal} />}
       <div className="selectedMission">
         {selectedMission && (
           <p>
