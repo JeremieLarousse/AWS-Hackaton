@@ -1,7 +1,11 @@
+.homepage {
+  display: none;
+}
+
 .container {
   position: relative;
-  height: 560px;
   overflow: hidden;
+  height: 540px;
 
   .background {
     opacity: 0.2;
@@ -34,7 +38,6 @@
       }
 
       .options {
-        // background-color: red;
         width: 50%;
         height: 60px;
         margin: 20px auto 20px auto;
@@ -46,14 +49,11 @@
         .texte {
           display: flex;
           flex-direction: column;
-
         }
 
         .label {
           display: flex;
-
-          gap:10px;
-
+          gap: 10px;
         }
 
         .save {
@@ -132,7 +132,7 @@
 
         .flipswitch-switch {
           width: 31px;
-          height:30px;
+          height: 30px;
           margin: -3.5px;
           background: #FFFFFF;
           border: 2px solid #999999;
