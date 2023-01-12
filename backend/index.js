@@ -15,7 +15,7 @@ app.use("/parc", voitureRouter);
 
 app.use("/destination", destinationRoutes);
 
-app.use("/api/mission", missionRouter);
+app.use("/mission", missionRouter);
 
 
 app.listen(port, (err) => {
