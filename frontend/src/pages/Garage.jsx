@@ -6,7 +6,12 @@ import TiArrowBack from '@meronex/icons/ti/TiArrowBack';
 import GiSave from '@meronex/icons/gi/GiSave';
 import '../styles/PageGarage.scss';
 
-const Garage = ({ setModal, selectedMission, setSelectedMission }) => {
+const Garage = ({
+    setModal,
+    selectedMission,
+    setSelectedMission,
+    selectedDestination,
+    setSlectedDestination }) => {
     // Voitures :
     const [marque, setMarque] = useState('Marque inconnue');
     const [modele, setModele] = useState('Modèle inconnu');
@@ -33,12 +38,16 @@ const Garage = ({ setModal, selectedMission, setSelectedMission }) => {
     };
     const handleAvailable = () => {
         setDisponible(!disponible);
-        console.log(disponible);
+        if (disponible == false) {
+            setDistance(selectedDestination[1]);
+        } else {
+            setDistance(0);
+        }
+        console.log(distance);
     };
     useEffect(() => {
         displayVoiture();
-        console.log(selectedMission);
-    }, []);
+    },);
 
     return (
         <div className='container'>
@@ -54,7 +63,7 @@ const Garage = ({ setModal, selectedMission, setSelectedMission }) => {
                     <div className='options'>
                         <div className='texte'>
                             <p>Mission : {selectedMission[0]}</p>
-                            <p>Destination : {destination} ({distance}km)</p>
+                            <p>Destination : {selectedDestination[0]} ({selectedDestination[1]}km)</p>
                         </div>
                         <div className='label'>
                             <p>Disponible</p>
@@ -74,7 +83,7 @@ const Garage = ({ setModal, selectedMission, setSelectedMission }) => {
                 <div className='pool'>
                     {data
                         .filter((e) =>
-                            (e.autonomie >= distance)
+                            (parseInt(e.autonomie) >= distance)
                         )
                         .filter((e) =>
                             (e.disponible == disponible || e.disponible == true)
