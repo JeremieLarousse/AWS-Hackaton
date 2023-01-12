@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const SelectDestination = () => {
+const SelectDestination = ({ searchValue }) => {
 
 
     const [destination, setDestination] = useState([]);
@@ -9,7 +9,7 @@ const SelectDestination = () => {
     useEffect(() => {
         axios.get("http://localhost:5000/destination")
             .then((res) => {
-                setDestination(res.data)
+                setDestination(res.data);
             }
             ).catch((err) => {
                 console.log(err)
@@ -17,14 +17,13 @@ const SelectDestination = () => {
     }, [])
 
 
-
     return (
 
-
-        <div>
-
-            <div className='destinationSelection'>
-                {destination.map((info) => (
+        <div className='destinationSelection'>
+            {destination
+                .filter((el) => {
+                    return el.nom_destination.toLowerCase().includes(searchValue.toLowerCase())
+                }).map((info) => (
                     <div>
                         <button className='buttonDestination'>
 
@@ -33,10 +32,10 @@ const SelectDestination = () => {
                         </button>
                     </div>
                 ))}
-            </div>
-
-
         </div>
+
+
+
     );
 };
 
