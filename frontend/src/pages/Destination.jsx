@@ -5,7 +5,7 @@ import "../styles/destination.scss"
 import TiArrowBack from '@meronex/icons/ti/TiArrowBack';
 import SearchDestination from '@components/SearchDestination';
 
-function Destination() {
+function Destination({ setModal, selectedDestination, setSelectedDestination }) {
 
     const [searchValue, setSearchValue] = React.useState('');
 
@@ -14,19 +14,16 @@ function Destination() {
         <div className='destinationContainer'>
 
             <div className='destinationPage'>
-                <NavLink to='/'>
-                    <button className='returnButton' type='submit'><TiArrowBack /></button>
-                </NavLink>
-                <h1 className='destinationTitle'>Destination</h1>
+
+                <button className='returnButton' type='submit' ><TiArrowBack onClick={() =>
+                    setModal("")
+                } /></button>
+
+                <h1 className='destinationTitle'>Destinations</h1>
 
                 <SearchDestination searchValue={searchValue} setSearchValue={setSearchValue} />
-                <SelectDestination searchValue={searchValue} />
+                <SelectDestination selectedDestination={selectedDestination} setSelectedDestination={setSelectedDestination} searchValue={searchValue} />
 
-                <button className="buttonValidation" type="submit" onClick={(e) => {
-                    display(e);
-                }}>
-                    Valider
-                </button>
             </div>
         </div>
     );
