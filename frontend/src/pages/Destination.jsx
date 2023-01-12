@@ -16,7 +16,9 @@ function Destination() {
 
                 <SelectDestination />
 
-                <button className="buttonValidation" type="submit">
+                <button className="buttonValidation" type="submit" onClick={(e) => {
+                    display(e);
+                }}>
                     Valider
                 </button>
             </div>
