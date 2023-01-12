@@ -1,0 +1,108 @@
+.destinationContainer {
+
+    img {
+        position: fixed;
+        opacity: 0.2;
+        width: 100vw;
+    }
+
+    .destinationPage {
+        position: absolute;
+        width: 100%;
+
+        .returnButton {
+            color: blue;
+            height: 22px;
+            border-radius: 11px;
+            border: 1px solid blue;
+            margin: 20px auto auto 20px;
+            scale: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 8%;
+            margin-bottom: 3%;
+
+        }
+
+        .destinationTitle {
+            text-align: center;
+        }
+
+        .searchBar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            width: 300px;
+            height: 40px;
+            border: 3px solid black;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(240, 231, 231);
+        }
+
+        .destinationSelection {
+            text-align: center;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 3px black;
+            box-shadow: 10px 0 10px 0 black;
+        }
+
+        .buttonDestination {
+            margin-top: 2%;
+            margin-bottom: 2%;
+            border-radius: 10px;
+            width: 50%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 3px blue;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 10px 0 10px 0 blue;
+        }
+
+        .nomDestination {
+            margin-right: 30%;
+        }
+
+        .buttonDestination:focus {
+            font-weight: bold;
+            font-size: 25px;
+            background-color: gray;
+            border: solid 6px black;
+            box-shadow: 10px 0 10px 0 black;
+        }
+    }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 374px) {}
+
+@media (min-width: 375px) and (max-width: 424px) {}
+
+@media (min-width: 425px) and (max-width: 767px) {}
+
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 768px) {}
+
+@media (max-width: 769px) {
+    img {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {}
+
+@media (min-width: 1024px) and (max-width: 1439px) {}
