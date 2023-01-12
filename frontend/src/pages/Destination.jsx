@@ -3,8 +3,13 @@ import { NavLink } from "react-router-dom";
 import SelectDestination from '@components/SelectDestination';
 import "../styles/destination.scss"
 import TiArrowBack from '@meronex/icons/ti/TiArrowBack';
+import SearchDestination from '@components/SearchDestination';
 
 function Destination() {
+
+    const [searchValue, setSearchValue] = React.useState('');
+
+
     return (
         <div className='destinationContainer'>
 
@@ -14,7 +19,8 @@ function Destination() {
                 </NavLink>
                 <h1 className='destinationTitle'>Destination</h1>
 
-                <SelectDestination />
+                <SearchDestination searchValue={searchValue} setSearchValue={setSearchValue} />
+                <SelectDestination searchValue={searchValue} />
 
                 <button className="buttonValidation" type="submit" onClick={(e) => {
                     display(e);
