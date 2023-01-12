@@ -8,7 +8,7 @@ function CardMission({ nom_mission, duree, setSelectedMission }) {
         <p>
           <span>Type de mission :</span> {nom_mission}
         </p>
-        <p>
+        <p><br></br>
           <span>Durée :</span> {duree}
         </p>
       </div>

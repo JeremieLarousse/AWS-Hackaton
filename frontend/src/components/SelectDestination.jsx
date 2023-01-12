@@ -6,6 +6,11 @@ const SelectDestination = ({ searchValue, setSelectedDestination }) => {
 
     const [destination, setDestination] = useState([]);
 
+    const handleDestination = () => {
+        setSelectedDestination([info.nom_destination, info.distance]);
+        console.log([info.nom_destination, info.distance]);
+    }
+
     useEffect(() => {
         axios.get("http://localhost:5000/destination")
             .then((res) => {
@@ -27,7 +32,6 @@ const SelectDestination = ({ searchValue, setSelectedDestination }) => {
                             <div key={info.idGarage}></div>
                             <div className='nomDestination'>{info.nom_destination}</div>
                             <div>{info.distance} km</div>
-
                         </button>
                     </div>
                 ))}

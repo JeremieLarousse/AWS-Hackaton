@@ -6,14 +6,14 @@ import Mission from "./Mission";
 import Garage from "./Garage";
 
 function Homepage() {
-    const [selectedMission, setSelectedMission] = useState();
+    const [selectedMission, setSelectedMission] = useState(['', '']);
     const [selectedDestination, setSelectedDestination] = useState();
     const [modal, setModal] = useState();
 
 
     return (
         <div className="Homepage">
-            <button onClick={() => setModal("mission")}>Mission</button>
+             <button onClick={() => setModal("mission")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Mission</button>
             {modal == "mission" && (
                 <Mission
                     selectedMission={selectedMission}
@@ -21,9 +21,9 @@ function Homepage() {
                     setModal={setModal}
                 />
             )}
-            <button onClick={() => setModal("destination")}>Destination</button>
+            <button onClick={() => setModal("destination")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Destination</button>
             {modal == "destination" && <Destination setModal={setModal} setSelectedDestination={setSelectedDestination} selectedDestination={selectedDestination} />}
-            <button onClick={() => setModal("garage")}>Garage</button>
+            <button onClick={() => setModal("garage")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Garage</button>
             {modal == "garage" && <Garage setSelectedMission={setSelectedMission} />}
             <div className="selectedMission">
                 {selectedMission && (
@@ -41,7 +41,6 @@ function Homepage() {
             </div>
         </div>
     );
-
 }
 
 export default Homepage;
