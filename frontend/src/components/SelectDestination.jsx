@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const SelectDestination = ({ searchValue, setSelectedDestination }) => {
 
-
     const [destination, setDestination] = useState([]);
 
     useEffect(() => {
@@ -27,7 +26,6 @@ const SelectDestination = ({ searchValue, setSelectedDestination }) => {
                             <div key={info.idGarage}></div>
                             <div className='nomDestination'>{info.nom_destination}</div>
                             <div>{info.distance} km</div>
-
                         </button>
                     </div>
                 ))}

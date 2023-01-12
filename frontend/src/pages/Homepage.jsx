@@ -10,7 +10,6 @@ function Homepage() {
     const [selectedDestination, setSelectedDestination] = useState();
     const [modal, setModal] = useState();
 
-
     return (
         <div className="Homepage">
             <button onClick={() => setModal("mission")}>Mission</button>
