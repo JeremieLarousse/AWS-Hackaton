@@ -14,7 +14,7 @@ const PageGarage = () => {
     const [immatriculation, setImmatriculation] = useState('Immatriculation inconnue');
     const [type, setType] = useState('Type inconnu');
     const [date, setDate] = useState('Date inconnue');
-    const [disponible, setDisponible] = useState('Disponibilité inconnue');
+    const [disponible, setDisponible] = useState(false);
     const [autonomie, setAutonomie] = useState('Autonomie inconnue');
 
     // Mission et destination :
@@ -35,8 +35,13 @@ const PageGarage = () => {
     // const handleDistance = (e) => {
     //     setDistance(e.target.value);
     // };
+    const handleAvailable = () => {
+        setDisponible(!disponible);
+        console.log(disponible);
+    }
     useEffect(() => {
         displayVoiture();
+        console.log(disponible);
     }, [])
 
     return (
@@ -57,7 +62,16 @@ const PageGarage = () => {
                             <p>Mission : {mission}</p>
                             <p>Destination : {destination} ({distance}km)</p>
                         </div>
-                        {/* <input onChange={handleDistance}></input> */}
+                        <div className='label'>
+                            <p>Disponible</p>
+                            <div class="flipswitch">
+                                <input type="checkbox" id="fs" class="flipswitch-cb" name="flipswitch" onClick={handleAvailable}></input>
+                                <label for="fs" class="flipswitch-label">
+                                    <div class="flipswitch-inner"></div>
+                                    <div class="flipswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
                         <div className='save'>
                             <button type='submit' className='button'><GiSave /></button>
                         </div>
@@ -67,6 +81,9 @@ const PageGarage = () => {
                     {data
                         .filter((e) =>
                             (e.autonomie >= distance)
+                        )
+                        .filter((e) =>
+                            (e.disponible == disponible || e.disponible == true)
                         )
                         .map((element) => {
                             return (
