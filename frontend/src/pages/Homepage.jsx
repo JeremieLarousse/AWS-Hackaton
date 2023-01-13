@@ -11,7 +11,6 @@ function Homepage() {
 
     return (
         <div className="Homepage">
-
             <button onClick={() => setModal("mission")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Mission</button>
             {modal == "mission" && (
                 <Mission
@@ -20,7 +19,6 @@ function Homepage() {
                     setModal={setModal}
                 />
             )}
-
             <button onClick={() => setModal("destination")} className={((modal == "mission" || modal == "destination" || modal == "garage") && 'hide')}>Destination</button>
             {modal == "destination" && <Destination setModal={setModal} setSelectedDestination={setSelectedDestination} selectedDestination={selectedDestination} />}
 
@@ -52,9 +50,8 @@ function Homepage() {
                     )}
                 </div>
             </div>
-
         </div>
     );
-}
+};
 
 export default Homepage;

@@ -10,7 +10,6 @@
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .missionTitle {
@@ -44,17 +43,13 @@
     width: 100vw;
     position: fixed;
     left:0;
-
 }
-
 
 .pageMission {
     width: 100%;
     position: absolute;
     top: 0;
 }
-
-
 
 .nomDestination {
     margin-right: 30%;
