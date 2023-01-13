@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Homepage.scss";
 import Destination from "./Destination";
-
 import Mission from "./Mission";
 import Garage from "./Garage";
 
@@ -34,21 +33,25 @@ function Homepage() {
                 setSelectedDestination={setSelectedDestination}
             />}
 
-            {/* <div className="selectedMission">
-                {selectedMission && (
-                    <p>
-                        {selectedMission[0]} {selectedMission[1]}
-                    </p>
-                )}
-            </div>
+            <div className={(selectedMission[0] || selectedDestination[0]) ? 'options' : "optionsHide"}>
+                <div className="selectedMission">
+                    {selectedDestination && (
+                        <div>
+                            <p>Mission sélectionnée : {selectedMission[0]}</p>
+                            <p>Durée : {selectedMission[1]} jour(s)</p>
 
-            <div className="selectedDestination">
-                {selectedDestination && (
-                    <p>
-                        {selectedDestination[0]} {selectedDestination[1]}
-                    </p>
-                )}
-            </div> */}
+                        </div>
+                    )}
+                </div>
+                <div className="selectedDestination">
+                    {selectedDestination && (
+                        <div>
+                            <p>Destination : {selectedDestination[0]} </p>
+                            <p>Distance : {selectedDestination[1]}Km</p>
+                        </div>
+                    )}
+                </div>
+            </div>
 
         </div>
     );

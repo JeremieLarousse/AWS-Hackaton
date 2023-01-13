@@ -60,12 +60,8 @@ const Garage = ({
                     <div className='title'>
                         <h1>Parc Automobile</h1>
                     </div>
-                    <div className='options'>
-                        <div className='texte'>
-                            <p>Mission : {selectedMission[0]}</p>
-                            <p>Destination : {selectedDestination[0]} ({selectedDestination[1]}km)</p>
-                        </div>
-                        <div className='label'>
+                    <div className='optionsF'>
+                         <div className='label'>
                             <p>Disponible</p>
                             <div class="flipswitch">
                                 <input type="checkbox" id="fs" class="flipswitch-cb" name="flipswitch" onClick={handleAvailable}></input>
