@@ -1,16 +1,20 @@
 import React from "react";
-// import "../styles/CardVehicule.scss";
+import "../styles/selectMission.css";
 
 function CardMission({ nom_mission, duree, setSelectedMission }) {
   return (
-    <div onClick={() => setSelectedMission([nom_mission, duree])}>
-      <div>
-        <p>
+    <div
+      className="buttonMission"
+      onClick={() => setSelectedMission([nom_mission, duree])}
+    >
+      <div className="buttonMissionContent">
+        <div>
           <span>Type de mission :</span> {nom_mission}
-        </p>
-        <p>
-          <span>Durée :</span> {duree}
-        </p>
+        </div>
+        <div>
+          {" "}
+          <span>Durée :</span> {duree} jour(s)
+        </div>
       </div>
     </div>
   );

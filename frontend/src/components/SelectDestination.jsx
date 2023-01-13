@@ -5,6 +5,11 @@ const SelectDestination = ({ searchValue, setSelectedDestination }) => {
 
     const [destination, setDestination] = useState([]);
 
+    const handleDestination = () => {
+        setSelectedDestination([info.nom_destination, info.distance]);
+        console.log([info.nom_destination, info.distance]);
+    }
+
     useEffect(() => {
         axios.get("http://localhost:5000/destination")
             .then((res) => {
